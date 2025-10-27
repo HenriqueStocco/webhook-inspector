@@ -1,0 +1,10 @@
+{
+  "name": "webhook-inspector",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "api",
+    "web"
+  ],
+  "packageManager": "pnpm@10.19.0"
+}
