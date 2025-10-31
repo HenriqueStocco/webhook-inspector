@@ -1,11 +1,11 @@
 {
-  "id": "67fbcd6e-0ad9-4869-938a-937b2595ee32",
+  "id": "10cdc994-10c6-4c64-a346-de4c9f52814e",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
   "tables": {
-    "public.webhoos": {
-      "name": "webhoos",
+    "public.webhooks": {
+      "name": "webhooks",
       "schema": "",
       "columns": {
         "id": {
@@ -45,8 +45,8 @@
           "primaryKey": false,
           "notNull": false
         },
-        "content_lenght": {
-          "name": "content_lenght",
+        "content_length": {
+          "name": "content_length",
           "type": "integer",
           "primaryKey": false,
           "notNull": false

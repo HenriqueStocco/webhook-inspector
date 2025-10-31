@@ -30,6 +30,7 @@ Executar a API (modo dev):
 cd api
 pnpm dev
 ```
+Evolução Palavra chave para o certificado do projeto
 
 Executar a aplicação web (modo dev):
 
