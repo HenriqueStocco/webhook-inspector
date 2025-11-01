@@ -4,6 +4,7 @@ import { IconButton } from './ui/icon-button'
 import { Trash2 } from 'lucide-react'
 import { formatDistanceToNow } from 'date-fns'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
+import { useState } from 'react'
 
 interface WebhooksListItemProps {
   webhook: {
@@ -12,10 +13,14 @@ interface WebhooksListItemProps {
     pathname: string
     createdAt: Date
   }
+  onWebhookChecked: (webhookId: string) => void
+  isWebhookChecked: boolean
 }
 
-export function WebhooksListItem({ webhook }: WebhooksListItemProps) {
+export function WebhooksListItem({ webhook, onWebhookChecked, isWebhookChecked }: WebhooksListItemProps) {
   const queryClient = useQueryClient()
+
+  const [isChecked, setIsChecked] = useState(false)
 
   const { mutate: deleteWebhook } = useMutation({
     mutationFn: async (id: string) => {
@@ -33,7 +38,10 @@ export function WebhooksListItem({ webhook }: WebhooksListItemProps) {
   return (
     <div className="group rounded-lg transition-colors duration-150 hover:bg-zinc-700/30">
       <div className="flex items-start gap-3 px-4 py-2.5">
-        <Checkbox />
+        <Checkbox
+          onCheckedChange={() => onWebhookChecked(webhook.id)}
+          checked={isWebhookChecked}
+        />
 
         <Link
           to="/webhooks/$id"
