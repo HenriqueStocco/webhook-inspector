@@ -21,7 +21,10 @@ export function SectionDataTable({
       <table className="w-full">
         <tbody>
           {data.map((item) => (
-            <tr key={item.key} className="border-b border-zinc-700 last:border-0">
+            <tr
+              key={item.key}
+              className="border-b border-zinc-700 last:border-0"
+            >
               <td className="p-3 text-sm font-medium text-zinc-400 bg-zinc-800 border-r border-zinc-700">
                 {item.key}
               </td>

@@ -24,11 +24,10 @@ export const listWebhooks: FastifyPluginAsyncZod = async (app) => {
                 method: true,
                 pathname: true,
                 createdAt: true,
-              })
+              }),
             ),
-            nextCursor: z.string().nullable()
-          },)
-
+            nextCursor: z.string().nullable(),
+          }),
         },
       },
     },

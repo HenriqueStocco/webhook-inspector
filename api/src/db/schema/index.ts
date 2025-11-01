@@ -1,1 +1,1 @@
-export { webhooks } from "./webhooks"
+export { webhooks } from './webhooks'

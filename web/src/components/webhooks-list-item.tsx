@@ -17,7 +17,11 @@ interface WebhooksListItemProps {
   isWebhookChecked: boolean
 }
 
-export function WebhooksListItem({ webhook, onWebhookChecked, isWebhookChecked }: WebhooksListItemProps) {
+export function WebhooksListItem({
+  webhook,
+  onWebhookChecked,
+  isWebhookChecked,
+}: WebhooksListItemProps) {
   const queryClient = useQueryClient()
 
   const [isChecked, setIsChecked] = useState(false)
@@ -25,14 +29,14 @@ export function WebhooksListItem({ webhook, onWebhookChecked, isWebhookChecked }
   const { mutate: deleteWebhook } = useMutation({
     mutationFn: async (id: string) => {
       await fetch(`http://localhost:3333/api/webhooks/${id}`, {
-        method: 'DELETE'
+        method: 'DELETE',
       })
     },
     onSuccess: () => {
       queryClient.invalidateQueries({
         queryKey: ['webhooks'],
       })
-    }
+    },
   })
 
   return (
